@@ -24,6 +24,21 @@ object ForExpressions extends App {
     output.toString()
   }
 
+  def forNestedLoops:String = {
+    val output:StringBuilder = new StringBuilder
+    val directoryContents:Array[File] = new File("/").listFiles()
+    for (
+      files <- directoryContents
+      if files.isFile;
+      fileContents = scala.io.Source.fromFile(files).getLines()
+    ) {
+      output ++= files + "\n"
+      output ++= fileContents + "\n"
+    }
+    output.toString()
+
+  }
+
 
   //demo calls to reduce console noise
   println(forDemo)
