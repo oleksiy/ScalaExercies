@@ -8,7 +8,7 @@ if(args.length > 0){
     else
       b
   )
-  println(Console.GREEN, longestLine)
+  println(Console.GREEN + longestLine)
 } else {
   Console.err.println("No dice")
 }
