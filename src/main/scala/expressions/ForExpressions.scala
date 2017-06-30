@@ -5,7 +5,8 @@ import java.io.File
   */
 object ForExpressions extends App {
   val directoryContents = (new File("/")).listFiles()
-  for(i <- directoryContents) {
-    println(i)
+  for(i <- 0 until directoryContents.length) { //until excludes the last element of the range (0..9 = 0...8)
+    println(directoryContents(i))
   }
+
 }
